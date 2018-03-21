@@ -34,10 +34,10 @@ public class MessageIntermediateLayoutAttributes {
     var messageLabelFont: UIFont = UIFont.preferredFont(forTextStyle: .body)
     var messageLabelInsets: UIEdgeInsets = .zero
 
-    var topLabelAlignment = LabelAlignment.cellCenter(.zero)
+    var topLabelAlignment = LabelAlignment(textAlignment: .center, textInsets: .zero)
     var topLabelSize: CGSize = .zero
 
-    var bottomLabelAlignment = LabelAlignment.cellCenter(.zero)
+    var bottomLabelAlignment = LabelAlignment(textAlignment: .center, textInsets: .zero)
     var bottomLabelSize: CGSize = .zero
 
     lazy var itemHeight: CGFloat = {

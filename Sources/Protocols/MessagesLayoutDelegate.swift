@@ -103,11 +103,25 @@ public protocol MessagesLayoutDelegate: AnyObject {
     /// The default value returned by this method is `false`.
     func shouldCacheLayoutAttributes(for message: MessageType) -> Bool
 
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat
+
+    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat
+
 }
 
 public extension MessagesLayoutDelegate {
 
     // MARK: - All Messages Defaults
+
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        // TODO: - More sensible default, this is just for testing
+        return 10
+    }
+
+    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        // TODO: - More sensible default, this is just for testing
+        return 10
+    }
 
     func headerViewSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         guard let displayDelegate = messagesCollectionView.messagesDisplayDelegate else {
